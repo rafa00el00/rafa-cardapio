@@ -12,6 +12,7 @@ function App() {
 
   return(
     <div>
+      <center><h1>Cardapio Bebidas</h1></center>
       {menu.map(m => {
         return <DrinkCard name={m.name} ingredientes={m.ingredientes} />
       })}
