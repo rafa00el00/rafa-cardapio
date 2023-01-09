@@ -4,6 +4,7 @@ import drinks from './assets/drinks.json'
 import { useEffect, useState } from "react"
 interface DrinkModel{
    name: string
+   img: string
    ingredientes: string[]
 }
 function App() {
@@ -14,7 +15,7 @@ function App() {
     <div>
       <center><h1>Cardapio Bebidas</h1></center>
       {menu.map(m => {
-        return <DrinkCard name={m.name} ingredientes={m.ingredientes} />
+        return <DrinkCard name={m.name} ingredientes={m.ingredientes} img={m.img} />
       })}
       
     </div> 
