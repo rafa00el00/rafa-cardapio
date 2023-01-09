@@ -1,7 +1,7 @@
 [
     {
         "name": "Moscow Mule",
-        "img": "/assets/imgs/moskou-mule.webp",
+        "img": "/rafa-cardapio/imgs/moskou-mule.webp",
         "ingredientes": [
             "1 dose de Vodka",
             "20 ml de suco de limão",
@@ -10,7 +10,7 @@
     },
     {
         "name": "Caipirinha",
-        "img":"/assets/imgs/caipirinha.webp",
+        "img":"/rafa-cardapio/imgs/caipirinha.webp",
         "ingredientes": [
             "1 Limão",
             "1 colher açucar",
@@ -19,7 +19,7 @@
     },
     {
         "name": "Gin Tonica",
-        "img": "/assets/imgs/gin-tonic.jpg",
+        "img": "/rafa-cardapio/imgs/gin-tonic.jpg",
         "ingredientes": [
             "1 dose de Gin",
             "1/2 dose de suco de limão",
@@ -28,7 +28,7 @@
     },
     {
         "name": "Wiskey Sour",
-        "img":"/assets/imgs/whiskey-sour.jpg",
+        "img":"/rafa-cardapio/imgs/whiskey-sour.jpg",
         "ingredientes":[
             "60 ml de Wiskey",
             "25 ml de limão siciliano(xarope)",
@@ -37,7 +37,7 @@
     },
     {
         "name":"Cosmopolitan",
-        "img":"/assets/imgs/consmopolitan.jpg",
+        "img":"/rafa-cardapio/imgs/consmopolitan.jpg",
         "ingredientes": [
             "60 ml de Vodka",
             "30 ml Licor de laranja",
@@ -47,7 +47,7 @@
     },
     {
         "name": "Mojito",
-        "img":"/assets/imgs/mojito.jpg",
+        "img":"/rafa-cardapio/imgs/mojito.jpg",
         "ingredientes":[
             "60 ml de rum branco",
             "20 ml de suco de limão",
