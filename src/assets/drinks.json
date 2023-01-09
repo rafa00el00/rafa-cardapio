@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Moscow Mule",
+        "img": "/assets/imgs/moskou-mule.webp",
+        "ingredientes": [
+            "1 dose de Vodka",
+            "20 ml de suco de limão",
+            "20 ml de xarope de gingibre"
+        ]
+    },
+    {
+        "name": "Caipirinha",
+        "img":"/assets/imgs/caipirinha.webp",
+        "ingredientes": [
+            "1 Limão",
+            "1 colher açucar",
+            "1 dose Cachaça"
+        ]
+    },
+    {
+        "name": "Gin Tonica",
+        "img": "/assets/imgs/gin-tonic.jpg",
+        "ingredientes": [
+            "1 dose de Gin",
+            "1/2 dose de suco de limão",
+            "Agua tonica para completar"
+        ]
+    },
+    {
+        "name": "Wiskey Sour",
+        "img":"/assets/imgs/whiskey-sour.jpg",
+        "ingredientes":[
+            "60 ml de Wiskey",
+            "25 ml de limão siciliano(xarope)",
+            "25 ml de limão"
+        ]
+    },
+    {
+        "name":"Cosmopolitan",
+        "img":"/assets/imgs/consmopolitan.jpg",
+        "ingredientes": [
+            "60 ml de Vodka",
+            "30 ml Licor de laranja",
+            "20 ml de xarope de romã",
+            "20 ml de suco de limão"
+        ]
+    },
+    {
+        "name": "Mojito",
+        "img":"/assets/imgs/mojito.jpg",
+        "ingredientes":[
+            "60 ml de rum branco",
+            "20 ml de suco de limão",
+            "20 ml de xarope de açucar",
+            "1 ramo de hortelã"
+        ]
+    }
+]
