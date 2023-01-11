@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 interface DrinkModel{
    name: string
    img: string
-   imgtag?:string
+   imgtag:string
    ingredientes: string[]
 }
 function App() {
