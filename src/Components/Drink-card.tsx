@@ -4,6 +4,7 @@ import '../assets/drinks-styles.css'
 type drinkCardProps = {
     name: string,
     img?: string,
+    imgtag : string,
     ingredientes: string[]
 
 }
@@ -16,6 +17,7 @@ export function DrinkCard(props: drinkCardProps) {
                 <div className="flip-card-inner">
                     <div className="flip-card-front grid">
                         <img src={props.img} />
+                        <small className="tagref"  dangerouslySetInnerHTML={{__html: props.imgtag}}></small>
                         <h3>{props.name}</h3>
                     </div>
                     

@@ -62,3 +62,12 @@
     color: black;
     transform: rotateY(-180deg);
 }
+
+
+.tagref{
+    color: rgb(160, 160, 160);
+    font-size: xx-small;
+}
+.tagref a{
+    color: rgb(104, 104, 104);
+}
