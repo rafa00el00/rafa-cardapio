@@ -1,7 +1,9 @@
-name: 1 - Feat
+name: 3 - deploy prod
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - "main"
 
 jobs:
   build:
@@ -19,12 +21,9 @@ jobs:
           npm i
           npm run build
 
-      - run: ls docs
-
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAFA_CARDAPIO }}'
           projectId: ${{ env.VITE_FIREBASE_DOMAIN }}
-          channelID: '${{ github.ref }}'
-          expires: 1d
+          channelID: live
