@@ -26,3 +26,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAFA_CARDAPIO }}'
           projectId: ${{ env.VITE_FIREBASE_DOMAIN }}
+          channelID: 'pr-${{ github.event.number }}'
