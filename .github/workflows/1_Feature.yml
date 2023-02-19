@@ -7,10 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      VITE_FIREBASE_API_KEY = ${{ secrets.VITE_FIREBASE_API_KEY}}
-      FIREBASE_APP_ID = ${{ secrets.FIREBASE_APP_ID}}
-      FIREBASE_MSG_SENDER_ID = ${{ secrets.FIREBASE_MSG_SENDER_ID}}
-      VITE_FIREBASE_DOMAIN = ${{ vars.VITE_FIREBASE_DOMAIN}}
+      VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY}}
+      FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID}}
+      FIREBASE_MSG_SENDER_ID: ${{ secrets.FIREBASE_MSG_SENDER_ID}}
+      VITE_FIREBASE_DOMAIN: ${{ vars.VITE_FIREBASE_DOMAIN}}
     steps: 
       - uses: actions/checkout@v3
 
