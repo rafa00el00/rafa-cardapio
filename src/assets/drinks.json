@@ -1,24 +1,5 @@
 [
-    {
-        "name": "Moscow Mule",
-        "img": "/rafa-cardapio/imgs/moskou-mule.jpg",
-        "imgtag": "Foto de Denys Gromov: <a href=\"https://www.pexels.com/pt-br/foto/borrao-mancha-nevoa-bokeh-4762721/>Conheça</a>",
-        "ingredientes": [
-            "1 dose de Vodka",
-            "20 ml de suco de limão",
-            "20 ml de xarope de gingibre"
-        ]
-    },
-    {
-        "name": "Caipirinha",
-        "img":"/rafa-cardapio/imgs/caipirinha.jpg",
-        "imgtag" : "Imagem de <a href=\"https://pixabay.com/pt/users/fotorech-5554393/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3483439\">Daniel Reche</a> por <a href=\"https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3483439\">Pixabay</a>",
-        "ingredientes": [
-            "1 Limão",
-            "1 colher açucar",
-            "1 dose Cachaça"
-        ]
-    },
+   
     {
         "name": "Gin Tonica",
         "img": "/rafa-cardapio/imgs/gin-tonic.jpg",

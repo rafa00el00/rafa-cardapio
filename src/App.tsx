@@ -1,26 +1,25 @@
-import { DrinkCard } from "./Components/Drink-card"
-import drinks from './assets/drinks.json'
 
-import { useEffect, useState } from "react"
-interface DrinkModel{
-   name: string
-   img: string
-   imgtag:string
-   ingredientes: string[]
-}
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom"
+import { AdminPage } from "./pages/admin/admin"
+import { CreateDrink } from "./pages/admin/Creates/create-drink"
+import { HomePage } from "./pages/home/home"
+
 function App() {
-  console.log(drinks)
-  let [menu, setMenu] = useState<DrinkModel[]>(drinks)
 
-  return(
-    <div>
-      <center><h1>Cardapio Bebidas</h1></center>
-      {menu.map(m => {
-        return <DrinkCard name={m.name} ingredientes={m.ingredientes} img={m.img} imgtag={m.imgtag} />
-      })}
-      
-    </div> 
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/rafa-cardapio" element={<HomePage />} />
+        <Route path="/rafa-cardapio/Admin" element={<AdminPage />} >
+          
+        </Route>
+        <Route path="/rafa-cardapio/Admin/create-drink" element={<CreateDrink />} />
+      </Routes>
+    </Router>
   )
+
 }
 
 

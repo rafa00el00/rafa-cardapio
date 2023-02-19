@@ -9,8 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.9",
+    "@mui/material": "^5.11.9",
+    "dotenv": "^16.0.3",
+    "firebase": "^9.17.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-alert": "^7.0.3",
+    "react-alert-template-mui": "^1.0.7",
+    "react-card-flip": "^1.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
