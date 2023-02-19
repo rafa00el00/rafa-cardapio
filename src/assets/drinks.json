@@ -1,25 +1,9 @@
 [
-    {
-        "name": "Moscow Mule",
-        "img": "/rafa-cardapio/imgs/moskou-mule.webp",
-        "ingredientes": [
-            "1 dose de Vodka",
-            "20 ml de suco de limão",
-            "20 ml de xarope de gingibre"
-        ]
-    },
-    {
-        "name": "Caipirinha",
-        "img":"/rafa-cardapio/imgs/caipirinha.webp",
-        "ingredientes": [
-            "1 Limão",
-            "1 colher açucar",
-            "1 dose Cachaça"
-        ]
-    },
+   
     {
         "name": "Gin Tonica",
         "img": "/rafa-cardapio/imgs/gin-tonic.jpg",
+        "imgtag": "Imagem de <a href=\"https://pixabay.com/pt/users/alejandromery-15923516/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5011619\">Alejandro Mery</a> por <a href=\"https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5011619\">Pixabay</a>",
         "ingredientes": [
             "1 dose de Gin",
             "1/2 dose de suco de limão",
@@ -29,6 +13,7 @@
     {
         "name": "Wiskey Sour",
         "img":"/rafa-cardapio/imgs/whiskey-sour.jpg",
+        "imgtag": "Foto de Maria Orlova: <a href=\"https://www.pexels.com/pt-br/foto/alcool-bebida-alcoolica-barra-bar-4946725/\">conheça aqui</a>",
         "ingredientes":[
             "60 ml de Wiskey",
             "25 ml de limão siciliano(xarope)",
@@ -38,6 +23,7 @@
     {
         "name":"Cosmopolitan",
         "img":"/rafa-cardapio/imgs/cosmopolitan.jpg",
+        "imgtag": "Imagem de <a href=\"https://pixabay.com/pt/users/alteregointeligencia-182426/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=282993\">Pere Serrat</a> por <a href=\"https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=282993\">Pixabay</a>",
         "ingredientes": [
             "60 ml de Vodka",
             "30 ml Licor de laranja",
@@ -48,6 +34,7 @@
     {
         "name": "Mojito",
         "img":"/rafa-cardapio/imgs/mojito.jpg",
+        "imgtag": "Imagem de <a href=\"https://pixabay.com/pt/users/stocksnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=698499\">StockSnap</a> por <a href=\"https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=698499\">Pixabay</a>",
         "ingredientes":[
             "60 ml de rum branco",
             "20 ml de suco de limão",

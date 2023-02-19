@@ -1,0 +1,29 @@
+name: 3 - deploy prod
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY}}
+      FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID}}
+      FIREBASE_MSG_SENDER_ID: ${{ secrets.FIREBASE_MSG_SENDER_ID}}
+      VITE_FIREBASE_DOMAIN: ${{ vars.VITE_FIREBASE_DOMAIN}}
+    steps: 
+      - uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          npm i
+          npm run build
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAFA_CARDAPIO }}'
+          projectId: ${{ env.VITE_FIREBASE_DOMAIN }}
+          channelID: live

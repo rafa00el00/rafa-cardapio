@@ -1,25 +1,24 @@
-import { DrinkCard } from "./Components/Drink-card"
-import drinks from './assets/drinks.json'
 
-import { useEffect, useState } from "react"
-interface DrinkModel{
-   name: string
-   img: string
-   ingredientes: string[]
-}
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom"
+import { RotasEnum } from "./modules/rotasEnum"
+import { AdminPage } from "./pages/admin/admin"
+import { CreateDrink } from "./pages/admin/Creates/create-drink"
+import { HomePage } from "./pages/home/home"
+
 function App() {
-  console.log(drinks)
-  let [menu, setMenu] = useState<DrinkModel[]>(drinks)
 
-  return(
-    <div>
-      <center><h1>Cardapio Bebidas</h1></center>
-      {menu.map(m => {
-        return <DrinkCard name={m.name} ingredientes={m.ingredientes} img={m.img} />
-      })}
-      
-    </div> 
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path={RotasEnum.BASE} element={<HomePage />} />
+        <Route path={RotasEnum.ADMIN} element={<AdminPage />} ></Route>
+        <Route path={RotasEnum.CREATE_DRINK} element={<CreateDrink />} />
+      </Routes>
+    </Router>
   )
+
 }
 
 

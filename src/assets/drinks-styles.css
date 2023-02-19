@@ -6,7 +6,12 @@
     padding: 24px;
     gap: 25px;
 }
-.flip-card {
+.img-card{
+    width: 100%;
+    object-fit: cover;
+    max-height: 300px;
+}
+/* .flip-card {
     color: black !important;
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +28,7 @@
     overflow: hidden;
     perspective: 500px;
     -webkit-perspective: 500px;
-}
+} */
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -61,4 +66,13 @@
     background-color: white;
     color: black;
     transform: rotateY(-180deg);
+}
+
+
+.tagref{
+    color: rgb(160, 160, 160);
+    font-size: xx-small;
+}
+.tagref a{
+    color: rgb(104, 104, 104);
 }
