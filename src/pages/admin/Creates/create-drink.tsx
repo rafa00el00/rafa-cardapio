@@ -1,7 +1,7 @@
 import "../../../assets/forms-styles.css"
 import { } from "@mui/material/Input"
-import { Alert, Box, Button, Container, createTheme, CssBaseline, TextField, ThemeProvider, Typography } from "@mui/material"
-import React, { useState } from "react"
+import { Alert, AlertColor, Box, Button, Container, createTheme, CssBaseline, TextField, ThemeProvider, Typography } from "@mui/material"
+import React, { InputHTMLAttributes, useState } from "react"
 import { addDrink, DrinkClass } from "../../../modules/drinks"
 import { Link } from "react-router-dom"
 import { RotasEnum } from "../../../modules/rotasEnum"
@@ -12,10 +12,14 @@ export type SalaProp = {
 }
 type CreateDrinkProp = {
 }
+type statusAlert = {
+    type: AlertColor | undefined,
+    msg: string
+}
 
 export function CreateDrink(props: CreateDrinkProp) {
 
-    let [alert,setAlert] = useState({type: "", msg: ""})
+    let [alert,setAlert] = useState<statusAlert>({type: undefined , msg: ""})
     
 
     let handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -43,12 +47,14 @@ export function CreateDrink(props: CreateDrinkProp) {
     }
     let [imgLoad, setImgLoad] = useState("");
 
-    let handleImg = ({target}) => {
+    let handleImg = (event: React.ChangeEvent<HTMLInputElement>) => {
         const fileReader = new FileReader();
-        fileReader.readAsDataURL(target.files[0]);
-        fileReader.onload = (e) => {
-            if (e.target && e.target.result)
+        if(event && event.target && event.target.files ){
+            fileReader.readAsDataURL(event.target.files[0]);
+            fileReader.onload = (e) => {
+                if (e.target && e.target.result)
                 setImgLoad(e.target.result.toString())
+            }
         }
     }
     let theme = createTheme();
