@@ -13,9 +13,9 @@ export function Rotas() {
                 <Route path="/" element={<HomePage />} />
                 <Route path={RotasEnum.BASE} element={<HomePage />} />
                 <Route path={RotasEnum.LOGIN} element={<LoginPage />} />
-                <Route element={<PrivateRoutes />}>
-                    <Route   path={RotasEnum.ADMIN} element={<AdminPage />} />
-                    <Route path={RotasEnum.CREATE_DRINK} element={<CreateDrink />} />
+                <Route path={RotasEnum.ADMIN} element={<PrivateRoutes />}>
+                    <Route path="" element={<AdminPage />} />
+                    <Route path={RotasEnum.CREATE_DRINK} element={<CreateDrink  />} />
                 </Route>
             </Routes>
         </Router>

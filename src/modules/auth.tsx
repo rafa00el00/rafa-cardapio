@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, UserCredential } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase";
 
@@ -10,4 +10,8 @@ export async function doLogin(user: string,pass: string){
             console.log(r.user)
             return r
         })
+}
+
+export async function doLogoff() {
+    return await signOut(auth);
 }

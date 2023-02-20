@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { RotasEnum } from "../../modules/rotasEnum";
 import { CreateDrink, SalaProp } from "./Creates/create-drink";
 import { LoginPage } from "../login/login";
+import { AdminBody } from "../../Components/Admin-body";
+import { Typography } from "@mui/material";
 
 
 export function AdminPage() {
@@ -10,9 +12,9 @@ export function AdminPage() {
         { name: "Cardapio Rafa", id: "rafa" }
     ]
     return (
-        <div>
-            <h1>Pagina Admin</h1>
-            <Link  to={RotasEnum.CREATE_DRINK} >Create Drink</Link>
-        </div>
+        <AdminBody >
+            <Typography>Pagina Admin</Typography>
+            <Link  to={`${RotasEnum.CREATE_DRINK}?drink=caipirinha`} >Create Drink</Link>
+        </AdminBody>
     )
 }

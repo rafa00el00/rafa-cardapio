@@ -48,7 +48,7 @@ export function DrinkCard(props: drinkCardProps) {
                                     className="img-card"
                                     width="100%"
                                 />
-                                <small className="tagref" dangerouslySetInnerHTML={{ __html: drink.tag }}></small>
+                                <small className="tagref" dangerouslySetInnerHTML={{ __html: drink.imgtag }}></small>
                                 <h3>{drink.name}</h3>
                             </div>
                             <div onClick={handleClick}>

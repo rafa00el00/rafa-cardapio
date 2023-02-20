@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { doLogin } from "../../modules/auth";
 import { RotasEnum } from "../../modules/rotasEnum";
-import { AuthContext, AuthContextProps } from "../context/authContext";
+import { AuthContext, AuthContextProps } from "../../context/authContext";
 
 export function LoginPage() {
     let [userName, setUser] = useState<string>("")
@@ -15,7 +15,7 @@ export function LoginPage() {
         doSingIn(userName,pass)
         
     }
-    
+
     if(signed)
         return <Navigate to={RotasEnum.ADMIN} />
 

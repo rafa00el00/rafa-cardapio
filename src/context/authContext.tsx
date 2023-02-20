@@ -1,9 +1,10 @@
 import { User } from "firebase/auth"
 import { createContext, useEffect, useState } from "react"
-import { doLogin } from "../../modules/auth"
+import { doLogin, doLogoff } from "../modules/auth"
 
 export type AuthContextProps = {
     doSingIn: (user: string, pass: string) => void
+    doSignOut: () => void
     , signed: boolean
     , user: User
 }
@@ -30,6 +31,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             })
     }
 
+    const doSignOut = () => {
+        return doLogoff()
+            .then(r => {
+                sessionStorage.removeItem("@FirebaseAuth:token")
+                sessionStorage.removeItem("@FirebaseAuth:user")
+                setUser(null);
+            })
+    }
+
     useEffect(() => {
         const sessionToken = sessionStorage.getItem("@FirebaseAuth:token");
         const sessionUser =  sessionStorage.getItem("@FirebaseAuth:user");
@@ -42,6 +52,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         <AuthContext.Provider
             value={{
                 doSingIn,
+                doSignOut,
                 signed: !!user,
                 user
             } as AuthContextProps}
