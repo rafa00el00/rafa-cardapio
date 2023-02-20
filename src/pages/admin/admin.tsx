@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { RotasEnum } from "../../modules/rotasEnum";
 import { CreateDrink, SalaProp } from "./Creates/create-drink";
+import { LoginPage } from "../login/login";
 
 
 export function AdminPage() {
@@ -12,7 +13,6 @@ export function AdminPage() {
         <div>
             <h1>Pagina Admin</h1>
             <Link  to={RotasEnum.CREATE_DRINK} >Create Drink</Link>
-            
         </div>
     )
 }

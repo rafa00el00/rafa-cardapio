@@ -27,7 +27,6 @@ export async function getDrink(id: string): Promise<DrinkClass> {
         .then(result => {
             let resultData = result.data();
             if (resultData) {
-                console.log(resultData)
                 return  Object.assign(new DrinkClass, {
                     name: resultData?.name,
                     img: resultData?.img,
