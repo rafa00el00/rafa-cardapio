@@ -9,6 +9,10 @@ import { DrinkClass, getDrink } from "../modules/drinks";
 type drinkCardProps = {
     idDrink: string,
 }
+
+export default function DrinkCardLazy(props: drinkCardProps) {
+    return DrinkCard(props);
+} 
 export function DrinkCard(props: drinkCardProps) {
     let [ings, setIngs] = useState<string[]>([])
     let [drink, setDrink] = useState(new DrinkClass);
@@ -27,29 +31,7 @@ export function DrinkCard(props: drinkCardProps) {
         e.preventDefault();
         setFlip(!isFlipped);
     }
-
-    // return <h2>{drink.name}</h2>
-    // return (
-    //     <div className="cardContainer">
-    //         <div className="flip-card c1">
-    //             <div className="flip-card-inner">
-    //                 <div className="flip-card-front grid">
-    //                     <img src={drink.img} />
-    //                     <small className="tagref" dangerouslySetInnerHTML={{ __html: drink.tag }}></small>
-    //                     <h3>{drink.name}</h3>
-    //                 </div>
-
-
-    //                 <div className="flip-card-back">
-    //                     <ul>
-    //                         {drink.ingredientes.map(i => <li>{i}</li>)}
-    //                     </ul>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-
-    // );
+    
     let theme = createTheme()
     return (
         <ThemeProvider theme={theme}>
@@ -70,7 +52,7 @@ export function DrinkCard(props: drinkCardProps) {
                                     className="img-card"
                                     width="100%"
                                 />
-                                <small className="tagref" dangerouslySetInnerHTML={{ __html: drink.tag }}></small>
+                                <small className="tagref" dangerouslySetInnerHTML={{ __html: drink.imgtag }}></small>
                                 <h3>{drink.name}</h3>
                             </div>
                             <div onClick={handleClick}>

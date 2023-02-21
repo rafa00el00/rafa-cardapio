@@ -1,6 +1,10 @@
-import { DrinksScena } from "../../Components/Drinks_screen";
+import { lazy, Suspense } from "react";
 
-export function HomePage()
-{
-    return <DrinksScena />
+export default function HomePage() {
+    const DrinksScenaLazy = lazy(() => import("../../Components/Drinks_screen"));
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <DrinksScenaLazy sala={null} />
+        </Suspense>
+    )
 }
