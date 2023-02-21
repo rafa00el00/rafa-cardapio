@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import { Label } from "@mui/icons-material";
-import { createTheme, Container, CssBaseline, Alert, Box, Typography, TextField, Button, CircularProgress } from "@mui/material";
+import { createTheme, Container, CssBaseline, Alert, Box, Typography, TextField, Button, CircularProgress, Skeleton, Stack } from "@mui/material";
 import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { addDrink, DrinkClass, getDrink } from "../modules/drinks";
@@ -31,7 +31,7 @@ export function DrinkForm(props: DrinkFormProps) {
 
     const { alertSuccess, alertFail } = useContext(AlertContext);
     // Get Drink for Update
-    if (props.drinkId) {
+    if (props.drinkId && props.drinkId != "" && props.drinkId != "null") {
         useEffect(() => {
             console.log("Get drink" + props.drinkId)
             setLoading(true);
@@ -46,6 +46,8 @@ export function DrinkForm(props: DrinkFormProps) {
                 setLoading(false);
             }).catch(e => {
                 setLoading(false);
+                console.log(e.message)
+                console.log(e)
                 alertFail("Não foi possivel carregar o Drink");
             })
         }, [props.drinkId])
@@ -110,7 +112,6 @@ export function DrinkForm(props: DrinkFormProps) {
     let theme = createTheme();
     return (
         <AdminBody >
-            <Link to={RotasEnum.ADMIN}>Voltar</Link>
             <Box
                 sx={{
                     marginTop: 8,
@@ -120,79 +121,93 @@ export function DrinkForm(props: DrinkFormProps) {
                 }}
             >
                 <Typography component="h1" variant="h5">
-                    Adicionar Drink
+                    {btnLabel}
                 </Typography>
-                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                    <Label ># {drinkId}</Label>
-                    <TextField
-                        margin="normal"
-                        fullWidth
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        label="Name"
-                        name="name"
-                        required
-                    />
-                    <TextField
-                        margin="normal"
-                        fullWidth
-                        id="ingredientes"
-                        value={ingredientes}
-                        onChange={(e) => setIngredientes(e.target.value)}
-                        label="Ingredientes"
-                        name="ingredientes"
-                        multiline
-                        required
-                    />
+                {
+                    ((name && props.drinkId) || (!props.drinkId || props.drinkId == "null")) ?
 
-                    <TextField
-                        margin="normal"
-                        fullWidth
-                        id="bases"
-                        value={bases}
-                        onChange={(e) => setBases(e.target.value)}
-                        label="Bases"
-                        name="bases"
-                        multiline
-                    />
-                    <TextField
-                        margin="normal"
-                        fullWidth
-                        id="imgtag"
-                        value={tag}
-                        onChange={(e) => setTag(e.target.value)}
-                        label="Descrição da imagem"
-                        name="imgtag"
-                        required
-                    />
-                    <Button
-                        variant="contained"
 
-                        component="label"
-                        fullWidth
-                    >
-                        Selecionar Imagem
-                        <input
-                            type="file"
-                            name="img"
-                            id="img"
-                            accept="image/*"
-                            hidden
-                            onChange={handleImg}
-                        />
-                    </Button>
-                    <img
-                        src={`${imgs}`}
-                        srcSet={`${imgs}`}
-                        width="300px"
-                        loading="lazy"
-                    />
-                    <div>
-                        {btn()}
-                    </div>
+                        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                            <TextField
+                                margin="normal"
+                                fullWidth
+                                id="name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                label="Name"
+                                name="name"
+                                required
+                            />
+                            <TextField
+                                margin="normal"
+                                fullWidth
+                                id="ingredientes"
+                                value={ingredientes}
+                                onChange={(e) => setIngredientes(e.target.value)}
+                                label="Ingredientes"
+                                name="ingredientes"
+                                multiline
+                                required
+                            />
 
-                </Box>
+                            <TextField
+                                margin="normal"
+                                fullWidth
+                                id="bases"
+                                value={bases}
+                                onChange={(e) => setBases(e.target.value)}
+                                label="Bases"
+                                name="bases"
+                                multiline
+                            />
+                            <TextField
+                                margin="normal"
+                                fullWidth
+                                id="imgtag"
+                                value={tag}
+                                onChange={(e) => setTag(e.target.value)}
+                                label="Descrição da imagem"
+                                name="imgtag"
+                                required
+                            />
+                            <Button
+                                variant="contained"
+
+                                component="label"
+                                fullWidth
+                            >
+                                Selecionar Imagem
+                                <input
+                                    type="file"
+                                    name="img"
+                                    id="img"
+                                    accept="image/*"
+                                    hidden
+                                    onChange={handleImg}
+                                />
+                            </Button>
+                            <img
+                                src={`${imgs}`}
+                                srcSet={`${imgs}`}
+                                width="300px"
+                                loading="lazy"
+                            />
+                            <div>
+                                {btn()}
+                            </div>
+
+                        </Box>
+                        : (
+                            <Stack spacing={1}>
+                                {/* For variant="text", adjust the height via font-size */}
+                                <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+
+                                {/* For other variants, adjust the size with `width` and `height` */}
+                                <Skeleton variant="rectangular" width={210} height={60} />
+                                <Skeleton variant="rounded" width={210} height={60} />
+                            </Stack>
+                        )
+                }
 
             </Box>
         </AdminBody>

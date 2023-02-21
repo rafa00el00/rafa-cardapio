@@ -29,7 +29,7 @@ export class DrinkClass {
             img: doc?.img,
             imgtag: doc?.imgtag,
             ingredientes: doc?.ingredientes,
-            bases: doc?.bases,
+            bases: doc?.bases || [],
         });
     }
 }

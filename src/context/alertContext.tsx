@@ -1,4 +1,4 @@
-import { Alert, AlertColor, CircularProgress, Snackbar } from "@mui/material"
+import { Alert, AlertColor, Snackbar } from "@mui/material"
 import { createContext, useState } from "react"
 
 type AlertContextProps = {

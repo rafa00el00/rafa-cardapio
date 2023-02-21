@@ -2,6 +2,7 @@ import "../../../assets/forms-styles.css"
 import { } from "@mui/material/Input"
 import { AlertColor } from "@mui/material"
 import React, {  } from "react"
+import DrinkForm from "../../../Components/Drink.form"
 
 export type SalaProp = {
     id: string,
@@ -18,8 +19,6 @@ export default function CreateDrink(props: CreateDrinkProp) {
     const searchParams = new URLSearchParams(document.location.search)
     let drinkname = searchParams.get("drink")
 
-    const DrinkFormLazy = React.lazy(() => import("../../../Components/Drink.form"))
 
-
-    return <DrinkFormLazy drinkId={drinkname} />
+    return <DrinkForm drinkId={drinkname} />
 }

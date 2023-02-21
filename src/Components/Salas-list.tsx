@@ -45,7 +45,7 @@ export function SalasList() {
                 {
                     (salas && salas.length > 0) ?
                         salas.map(s =>
-                            <ListItem alignItems="flex-start">
+                            <ListItem key={s.id} alignItems="flex-start">
                                 <ListItemButton onClick={(e) => handleClick(e, s.id)}>
 
                                     <ListItemText primary={s.name} secondary={
