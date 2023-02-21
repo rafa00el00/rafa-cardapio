@@ -46,7 +46,7 @@ export function DrinkCard(props: drinkCardProps) {
                     }}
                 >
                     <Box sx={{ mt: 1 }} >
-                        <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped} >
+                        <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped} >
                             <div onClick={handleClick}>
                                 <img src={drink.img}
                                     className="img-card"

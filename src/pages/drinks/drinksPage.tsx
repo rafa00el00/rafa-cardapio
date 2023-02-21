@@ -1,13 +1,14 @@
 import { lazy, Suspense } from "react";
+import AdminBody from "../../Components/Admin-body";
+import DrinksList from "../../Components/Drinks-list";
 
 export default function DrinksPage() {
-    const AdminBodyLazy = lazy(() => import("../../Components/Admin-body"));
-    const DrinksListLazy = lazy(() => import("../../Components/Drinks-list"));
+    
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <AdminBodyLazy >
-                <DrinksListLazy />
-            </AdminBodyLazy>
+            <AdminBody >
+                <DrinksList />
+            </AdminBody>
         </Suspense>
     )
 }
