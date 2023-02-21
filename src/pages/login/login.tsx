@@ -5,7 +5,7 @@ import { doLogin } from "../../modules/auth";
 import { RotasEnum } from "../../modules/rotasEnum";
 import { AuthContext, AuthContextProps } from "../../context/authContext";
 
-export function LoginPage() {
+export default function LoginPage() {
     let [userName, setUser] = useState<string>("")
     let [pass, setPass] = useState<string>("");
     const { doSingIn, signed, user } = useContext(AuthContext)

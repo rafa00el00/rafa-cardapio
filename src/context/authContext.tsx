@@ -28,6 +28,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 return r.user
             }).catch(e => {
                 console.log(e.message)
+                return e;
             })
     }
 

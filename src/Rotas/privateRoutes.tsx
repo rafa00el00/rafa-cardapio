@@ -4,7 +4,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { RotasEnum } from "../modules/rotasEnum";
 import { AuthContext, AuthContextProps } from "../context/authContext";
 
-export function PrivateRoutes() {
+export default function PrivateRoutes() {
 
     const { signed } = useContext(AuthContext) as AuthContextProps;
     const navLogin = RotasEnum.LOGIN;

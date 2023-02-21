@@ -3,15 +3,25 @@ import { createTheme, Container, CssBaseline, Box, Button, ButtonGroup, Avatar, 
 import LogoutIcon from '@mui/icons-material/Logout';
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/authContext";
+import { Margin } from "@mui/icons-material";
+import { RotasEnum } from "../modules/rotasEnum";
+import { Navigate, useNavigate } from "react-router-dom";
 
 type AdminBodyProps = {
-    children: JSX.Element[]
+    children: JSX.Element | JSX.Element[]
 }
 
-export function AdminBody({ children }: AdminBodyProps) {
+export default function AdminBodyLazy({ children }: AdminBodyProps) {
+    return AdminBody({children});
+}
+
+export  function AdminBody({ children }: AdminBodyProps) {
     const { user, doSignOut } = useContext(AuthContext)
     const [perfilMenu, setPerfilMenu] = React.useState<null | HTMLElement>(null);
     const openPerfilMenu = Boolean(perfilMenu);
+    const navigate = useNavigate();
+
+
     const handleLogout = (event: React.MouseEvent<HTMLElement>) => {
         doSignOut();
         handleClose()
@@ -24,6 +34,11 @@ export function AdminBody({ children }: AdminBodyProps) {
     };
     const [perfilPhoto, setPerfilPhoto] = useState<string>(user.photoURL || "")
 
+    const navTo = (rota:string) =>{
+        const navRota = `${RotasEnum.ADMIN}/${rota}`;
+        navigate(navRota)
+    }
+
 
     let theme = createTheme();
     return (
@@ -33,9 +48,9 @@ export function AdminBody({ children }: AdminBodyProps) {
                     <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                         <Avatar alt="Meus Drinks" src="/logo_meus_drinks.png" />
                         <ButtonGroup variant="outlined" size="large" sx={{ margin: '5px' }} aria-label="large outlined button group">
-                            <Button > Admin </Button>
-                            <Button > Drinks </Button>
-                            <Button > Salas </Button>
+                            <Button  onClick={e => navTo("")} > Admin </Button>
+                            <Button onClick={e => navTo(RotasEnum.DRINKS)} > Drinks </Button>
+                            <Button onClick={e => navTo(RotasEnum.SALAS)} > Salas </Button>
                         </ButtonGroup>
                         <Tooltip title="Account settings">
                             <IconButton
@@ -67,7 +82,9 @@ export function AdminBody({ children }: AdminBodyProps) {
                     </Box>
                 </React.Fragment>
                 <CssBaseline />
-                {children}
+                <Box sx={{ margin:"3em auto" }}>
+                    {children}
+                </Box>
             </Container>
         </ThemeProvider>
     )

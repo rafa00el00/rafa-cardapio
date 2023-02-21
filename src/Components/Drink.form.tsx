@@ -12,6 +12,10 @@ type DrinkFormProps = {
     drinkId: string | null
 }
 
+export default function DrinkFormLazy(props: DrinkFormProps) {
+    return DrinkForm(props);
+}
+
 export function DrinkForm(props: DrinkFormProps) {
     let [drinkId, setDrinkId] = useState("");
     let [name, setName] = useState("");

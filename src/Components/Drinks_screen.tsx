@@ -2,11 +2,21 @@ import { useEffect, useState } from "react";
 import { collection, doc, getDoc } from "firebase/firestore"
 import { db } from "../firebase"
 import { DrinkCard } from "./Drink-card-fb";
-export function DrinksScena() {
+
+type DrinksScenaProps = {
+    sala: string | null
+}
+
+export default function DrinksScenaLazy(props: DrinksScenaProps) {
+    return DrinksScena(props);   
+}
+export function DrinksScena(props: DrinksScenaProps) {
+    
 
     let [sala, setSala] = useState({ name: "loading...", drinks: [] });
     const featchSala = async () => {
-        await getDoc(doc(db, "Salas", "vqNspw0bNZ0z5jAvVFtc"))
+        const salaId = props.sala || "vqNspw0bNZ0z5jAvVFtc";
+        await getDoc(doc(db, "Salas", salaId))
             .then(result => {
                 let resultData = result.data() || {};
                 

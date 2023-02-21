@@ -9,6 +9,10 @@ import { DrinkClass, getDrink } from "../modules/drinks";
 type drinkCardProps = {
     idDrink: string,
 }
+
+export default function DrinkCardLazy(props: drinkCardProps) {
+    return DrinkCard(props);
+} 
 export function DrinkCard(props: drinkCardProps) {
     let [ings, setIngs] = useState<string[]>([])
     let [drink, setDrink] = useState(new DrinkClass);
